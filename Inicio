@@ -1,0 +1,106 @@
+<head>
+      <title>Administrador</title>
+    </head>
+<?php
+include("conexion.php");
+?>
+<body bgcolor="White"background="images/FONO.jpg"> 
+<center> <h2><font color="White" size="8">Datos Aprendices</h2></font>
+<table> 
+<table align="center" cellpadding=4 cellspacing=1 border=2 width="150"
+        bordercolor="#F6681D" bgcolor="White">
+        <tr>
+                     <td> ID_APRENDIZ </td> 
+                     <td> ID_AMBIENTE  </td> 
+                     <td> ID_FICHAS </td> 
+                     <td> ID_JORNADA </td> 
+                     <td> NOMBRE </td>
+                     <td> APELLIDO </td> 
+                     <td> TELEFONO </td> 
+                     <td> CEDULA </td> 
+                     <td> CORREO </td> 
+                     <td> DIRECCION </td> 
+                     <td> USUARIO </td> 
+                     <td> CONTRASENA </td>
+        </tr>
+        
+<?php
+        $query = "SELECT * FROM `aprendiz`";
+        $resultado = mysqli_query($conexion,$query);
+        while($row=mysqli_fetch_array($resultado)){
+?>
+<tr>
+        <td align="center"><?php echo $row['ID_APRENDIZ']; ?></td>
+        <td align="center"><?php echo $row['ID_AMBIENTE']; ?></td>
+        <td align="center"><?php echo $row['ID_FICHAS']; ?></td>
+        <td align="center"><?php echo $row['ID_JORNADA']; ?></td>
+        <td align="center"><?php echo $row['NOMBRE']; ?></td>
+        <td align="center"><?php echo $row['APELLIDO']; ?></td>
+        <td align="center"><?php echo $row['TELEFONO']; ?></td>
+        <td align="center"><?php echo $row['CEDULA']; ?></td>
+        <td align="center"><?php echo $row['CORREO']; ?></td>
+        <td align="center"><?php echo $row['DIRECCION']; ?></td>
+        <td align="center"><?php echo $row['USUARIO']; ?></td>
+        <td align="center"><?php echo $row['CONTRASENA']; ?></td>
+
+</tr>
+<?php
+        }
+?>
+</table> <br><br> 
+</tr>
+        <div id="buttons">
+        <center> <h2><font color="White" size="5"> <a href="EditarAprendiz.php" class="but"  title="">Editar Aprendiz</a><div class="but_razd"></div>
+    <a href="EliminarAprendiz.php"  class="but" title="">Eliminar Aprendiz</a><div class="but_razd"></div></h2></font>
+    </div>
+     <br>
+
+<center> <h2><font color="White" size="8">Datos Instructores</h2></font>
+<table> 
+<table align="center" cellpadding=4 cellspacing=1 border=2 width="150"
+        bordercolor="#F6681D" bgcolor="White">
+        <tr>
+                     <td> ID_INSTRUCTORES </td> 
+                     <td> ID_AMBIENTE  </td> 
+                     <td> ID_FICHAS </td> 
+                     <td> ID_JORNADA </td> 
+                     <td> NOMBRE </td>
+                     <td> APELLIDO </td> 
+                     <td> TELEFONO </td> 
+                     <td> CEDULA </td> 
+                     <td> CORREO </td> 
+                     <td> DIRECCION </td> 
+                     <td> USUARIO </td> 
+                     <td> CONTRASENA </td>
+<?php
+        $query = "SELECT * FROM `instructor`";
+        $resultado = mysqli_query($conexion,$query);
+        while($row=mysqli_fetch_array($resultado)){
+?>
+<tr>
+        <td align="center"><?php echo $row['ID_INSTRUCTORES']; ?></td>
+        <td align="center"><?php echo $row['ID_AMBIENTE']; ?></td>
+        <td align="center"><?php echo $row['ID_FICHAS']; ?></td>
+        <td align="center"><?php echo $row['ID_JORNADA']; ?></td>
+        <td align="center"><?php echo $row['NOMBRE']; ?></td>
+        <td align="center"><?php echo $row['APELLIDO']; ?></td>
+        <td align="center"><?php echo $row['TELEFONO']; ?></td>
+        <td align="center"><?php echo $row['CEDULA']; ?></td>
+        <td align="center"><?php echo $row['CORREO']; ?></td>
+        <td align="center"><?php echo $row['DIRECCION']; ?></td>
+        <td align="center"><?php echo $row['USUARIO']; ?></td>
+        <td align="center"><?php echo $row['CONTRASENA']; ?></td>
+
+</tr>
+<?php
+        }
+?>
+</table> <br><br> 
+<div id="buttons">
+<center> <h2><font color="White" size="5"> <a href="EditarInstructor.php" class="but"  title="">Editar Instructor</a><div class="but_razd"></div>
+    <a href="EliminarInstructor.php"  class="but" title="">Eliminar Instructor</a><div class="but_razd"></div></h2></font>
+    </div>
+
+     <br>
+     <center> <a href="IngresoAdministrador.php" ><h2><font color="White" size="6"></h2>..::Volver::..</font></a>
+     <center> <a href="Inicio.php" ><h2><font color="White" size="6"></h2>..::Salir::..</font></a>
